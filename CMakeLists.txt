@@ -124,6 +124,9 @@ if (PKG_CONFIG_FOUND)
   set(libdir "\${exec_prefix}/lib${LIB_SUFFIX}")
   set(bindir "\${exec_prefix}/bin")
   set(includedir "\${prefix}/include")
+  if(PSP)
+      list(APPEND PC_LIBS freetype png z)
+  endif()
 
   configure_file("${SDL_ttf_SOURCE_DIR}/SDL2_ttf.pc.in"
     "${SDL_ttf_BINARY_DIR}/SDL2_ttf.pc" @ONLY)
